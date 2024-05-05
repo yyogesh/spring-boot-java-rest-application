@@ -43,4 +43,15 @@ public class JobController {
         jobService.deleteJobPost(jobId);
         return "Deleted";
     }
+
+    @GetMapping("load")
+    public String loadJob() {
+        jobService.loadJobData();
+        return "success";
+    }
+
+    @GetMapping("job/search/{keyword}")
+    public List<JobPost> searchByKeyword(@PathVariable String keyword) {
+        return jobService.search(keyword);
+    }
 }
