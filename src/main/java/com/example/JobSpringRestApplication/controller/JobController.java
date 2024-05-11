@@ -15,6 +15,11 @@ public class JobController {
     @Autowired
     private IJobService jobService;
 
+    @GetMapping("auth-failed")
+    public String authFailed() {
+        return "Auth-Failed";
+    }
+
     @GetMapping("jobs")
     public List<JobPost> home() {
         System.out.println("Get all job request");
